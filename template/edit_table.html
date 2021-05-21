@@ -1,0 +1,91 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Complaint List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://font.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="{%static 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+	
+	<link rel="stylesheet" href="{%static 'css1/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+      <p style="text-align: right;"}><a href="/superlogin/">Logout</a></p>
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">COMPLAINTS</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-dark">
+                            <tr>
+						     
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Complaint Number</th>
+                                <th>Complaint Category</th>
+                                <th>Complaint Description</th>
+                                <th>Area of Complaint</th>
+                                <th>Date of Complaint</th>
+                                <th>Acknowledgment</th>
+                                <th>Steps Taken</th>
+                                <th>Complaint Status</th>
+                                <th>Date of Update</th>
+
+                                
+                                <th>  </th>
+                              
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="alert" role="alert">
+  
+                              {% for res in com_no %}
+                                
+                              
+                                
+                                <td>{{res.name}}</td>
+                                <td>{{res.phone_no}}</td>
+                                <td>{{res.id}}</td>
+                                <td>{{res.complaint_category}}</td>
+                                <td>{{res.complaint_description}}</td>
+                                <td>{{res.area_of_complaint}}</td>
+                                <td>{{res.date_of_complaint}}</td>
+                                <td>{{res.acknowledgement_of_complaint}}</td>
+                                <td>{{res.steps_taken}}</td>
+                                <td>{{res.complaint_status}}</td>
+                                <td>{{res.date_of_update}}</td>
+                                <td><a href="/update/{{res.id}}">Proceedings</a></td>
+                                <td>
+                                  <a href="#" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                              </a>
+                            </td>
+                                
+                              </tr>
+                              {% endfor %}
+                            </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{%static 'js1/jquery.min.js' %}"></script>
+  <script src="{%static 'js1/popper.js' %}"></script>
+  <script src="{%static 'js1/bootstrap.min.js' %}"></script>
+  <script src="{%static 'js1/main.js' %}"></script>
+
+	</body>
+</html>
+

@@ -1,0 +1,104 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Make Change</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="{%static 'https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap' %}" rel="stylesheet">
+
+	<link rel="stylesheet" href="{%static 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+	
+	<link rel="stylesheet" href="{%static 'css/style.css' %}">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">UPDATE THE COMPLAINT DETAILS</h2>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-5">
+					<div class="login-wrap p-4 p-md-5">
+		      
+						<form class="login-form" method="POST" action="http://127.0.0.1:8000/update/{{comp.id}}/">
+                            {% csrf_token %}
+                            <h3 class="text-center mb-4">Complaint Number :  {{comp.id}}</h3>
+                            
+                            <div class="form-group">
+                                <pre> <label style="color:black;size:15px;font-family: Georgia, 'Times New Roman', Times, serif;">Name</label>                   {{comp.name}}</pre>
+                            </div>
+                            <div class="form-group">
+                                <pre> <label style="color:black;size:15px;font-family: Georgia, 'Times New Roman', Times, serif;">Phone Number</label>            {{comp.phone_no}}</pre>
+                            </div>
+                            <div class="form-group">
+                                <pre> <label style="color:black;size:15px; font-family: Georgia, 'Times New Roman', Times, serif;">Complaint Category</label>        {{comp.complaint_category}}</pre>
+                            </div>
+                            
+                            <div class="form-group">
+                                <pre> <label style="color:black;size:15px; font-family: Georgia, 'Times New Roman', Times, serif">Area of Complaint</label>         {{comp.area_of_complaint}}</pre>
+                            </div>
+                            <div class="form-group">
+                                <pre> <label style="color:black;size:15px; font-family: Georgia, 'Times New Roman', Times, serif;">Date of Complaint </label>         {{comp.date_of_complaint}}</pre>
+                            </div>
+                            <div class="form-group">
+                                <pre> <label style="color:black;size:15px;font-family: Georgia, 'Times New Roman', Times, serif;">Complaint Decription</label>          <p>     {{comp.complaint_description}}</p></pre>
+                            </div>
+
+                            <div class="form-group">
+                                <label style="color:black;size:12px;">Ensure the Acknowledgment  </label> 
+                                <select name="ack" class="form-control rounded-left">
+                                    <option value="{{comp.acknowledgement_of_complaint}}">Not Applicable</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                    
+                                  </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label style="color:black;size:12px;"> Enter the Complaint Status  </label> 
+                                <select name="status" class="form-control rounded-left">
+                                    <option value="{{comp.complaint_status}}">Not Applicable</option>
+                                    <option value="Completed">Completed</option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="Not Completed">Not Completed</option>
+                                  </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label style="color:black;size:12px;">Update the Steps Taken</label> 
+                                <textarea  class="form-control rounded-left" name=steps required> {{comp.steps_taken}}
+                                   
+                                </textarea>
+                            </div>
+                    
+	            
+	            <div class="form-group">
+	            	<button type="submit" class="btn btn-primary rounded submit p-3 px-5">Make Changes</button>
+	            </div>
+                
+	          </form>
+	        </div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+	</section>
+
+	<script src="{%static 'js/jquery.min.js' %}"></script>
+  <script src="{%static 'js/popper.js' %}"></script>
+  <script src="{%static 'js/bootstrap.min.js' %}"></script>
+  <script src="{%static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+
