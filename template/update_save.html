@@ -26,7 +26,7 @@
 				<div class="col-md-6 col-lg-5">
 					<div class="login-wrap p-4 p-md-5">
 		      
-						<form class="login-form" method="POST" action="http://127.0.0.1:8000/update/{{comp.id}}/">
+						<form class="login-form" method="POST" action="https://municipal-complaint-system.herokuapp.com/update/{{comp.id}}/">
                             {% csrf_token %}
                             <h3 class="text-center mb-4">Complaint Number :  {{comp.id}}</h3>
                             
