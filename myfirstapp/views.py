@@ -41,7 +41,7 @@ def userviewcomplaint(request):
 		name=request.GET.get('name')
 		phone=request.GET.get('phone')
 		com=complaint_register.objects.all().filter(phone_no=phone,name=name)
-		print(com)
+		print(com,"object check")
 		data1=list()
 		for i in com:
 			if i.phone_no != ' ':
