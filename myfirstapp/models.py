@@ -11,7 +11,7 @@ class complaint(models.Model):
 	phone_no=models.CharField(max_length=30, null=True)
 	types=models.CharField(max_length=50)
 	desc=models.CharField(max_length=10)
-	area=models.CharField(max_length=10)
+	area=models.CharField(max_length=500)
 
 
 class complaint_register(models.Model):
