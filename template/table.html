@@ -28,9 +28,9 @@
 						  <thead class="thead-dark">
                             <tr>
 						     
-                                <th>Name</th>
-                                <th>Phone</th>
                                 <th>Complaint Number</th>
+				<th>Name</th>
+                                <th>Phone Number</th>
                                 <th>Complaint Category</th>
                                 <th>Complaint Description</th>
                                 <th>Area of Complaint</th>
@@ -51,10 +51,9 @@
                               {% for res in com_no %}
                                 
                               
-                                
+                                <td>{{res.id}}</td>
                                 <td>{{res.name}}</td>
                                 <td>{{res.phone_no}}</td>
-                                <td>{{res.id}}</td>
                                 <td>{{res.complaint_category}}</td>
                                 <td>{{res.complaint_description}}</td>
                                 <td>{{res.area_of_complaint}}</td>
