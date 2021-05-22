@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '6i6phx-*41*3a#+84*sb09419m^1s^4!39gicm+*g^pg+-d&=a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['municipal-complaint-system.herokuapp.com','127.0.0.1']
 
