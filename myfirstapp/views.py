@@ -47,7 +47,8 @@ def userviewcomplaint(request):
 				data1.append(i)
 		stu = {
 			"com_no": data1
-        }
+        	}
+		print(data1,"data view check")
 		return render(request,"table.html",stu)
 	return render(request,"user_view_detail.html")
 	
