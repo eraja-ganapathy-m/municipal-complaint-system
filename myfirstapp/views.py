@@ -63,7 +63,7 @@ def superuserlogin(request):
 	if request.method=="POST":
 			empid=request.POST['empid']
 			passcode=request.POST['passcode']
-			data = super_user_details.objects.all().filter(emp_id=empid,passcode=passcode)
+			data = super_user_details.objects.all().filter(emp_id=empid,passcode=passcode).orderby('-id')
 			data1 = complaint_register.objects.all()
 			list1=list()
 			for i in data1:
